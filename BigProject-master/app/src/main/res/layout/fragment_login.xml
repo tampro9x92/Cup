@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lnMainLoginRegister"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cafebackground"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_gravity="left"
+        android:id="@+id/imvBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:visibility="visible" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1A000000"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="center"
+                        android:text="Login"
+                        android:textColor="#fff"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/edtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#fff"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="#fff" />
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#fff"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColorHint="#fff" />
+
+                    <EditText
+                        android:id="@+id/edtFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:animateLayoutChanges="true"
+                        android:backgroundTint="#fff"
+                        android:hint="Full Name"
+                        android:textColorHint="#fff"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/lnDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:animateLayoutChanges="true"
+                        android:gravity="bottom"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#fff"
+                            android:drawableRight="@drawable/ic_date_range_black_24dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:paddingRight="3dp"
+                            android:text="Date"
+                            android:textColor="#fff"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#fff" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="+84"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                           />
+                        <EditText
+                            android:paddingLeft="40dp"
+                            android:id="@+id/edtPhonenumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:backgroundTint="#fff"
+                            android:hint="Phonenumber"
+                            android:inputType="number"
+                            android:textColorHint="#fff"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:animateLayoutChanges="true"
+                        android:backgroundTint="#fff"
+                        android:hint="Address"
+                        android:textColorHint="#fff"
+                        android:visibility="visible" />
+
+                    <RadioGroup
+                        android:id="@+id/rgSex"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:animateLayoutChanges="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <RadioButton
+                            android:checked="true"
+                            android:gravity="center"
+                            android:id="@+id/rbMale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="#fff"
+                            android:buttonTint="#fff"
+                            android:text="Mail"
+                            android:textColor="#fff" />
+
+                        <RadioButton
+                            android:gravity="center"
+                            android:id="@+id/rbFemail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="#fff"
+                            android:buttonTint="#fff"
+                            android:text="Femail"
+                            android:textColor="#fff" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvForgetPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:text="Forgot Password"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/lnLoginRegisterButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnRegister"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:animateLayoutChanges="true"
+                            android:background="@drawable/shape_login"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Register"
+                            android:textColor="#fff"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/btnLogin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:animateLayoutChanges="true"
+                            android:background="@drawable/shape_login"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Login"
+                            android:textColor="#fff"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnLoginGoogle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:animateLayoutChanges="true"
+                        android:background="#fff"
+                        android:drawableLeft="@drawable/googleg_standard_color_18"
+                        android:padding="10dp"
+                        android:text="GooGle"
+                        android:textColor="@color/common_google_signin_btn_text_light_pressed"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/btnLoginFacebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:animateLayoutChanges="true"
+                        android:background="@drawable/com_facebook_button_background"
+                        android:drawableLeft="@drawable/com_facebook_button_icon"
+                        android:padding="10dp"
+                        android:text="FaceBook"
+                        android:textColor="#fff" />
+                </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
