@@ -11,13 +11,12 @@
     $phonenumber = $_POST['phonenumber'];
     $address = $_POST['address'];
     $sex = $_POST['sex'];
-    $avatar = $_POST['avatar'];
     $passwordOut = md5($passwordIn);
     $sql;
    
         if(!checkEmail($email,$conn)&&!checkPhoneNumber($phonenumber,$conn)){        
              $sql = "INSERT INTO 
-            `user` (`email`, `password`, `fullname`, `dateofbirth`, `permission`, `phonenumber`, `avatar`,`address`, `sex`)
+            `user` (`email`, `password`, `fullname`, `dateofbirth`, `permission`, `phonenumber`,`address`, `sex`)
             VALUES('$email','$passwordOut','$fullname','$dateofbirth','$permission','$phonenumber','$avatar','$address','$sex')";
             $query =  $conn->query($sql);
             
