@@ -5,8 +5,8 @@ import android.widget.Toast;
 
 import com.t3h.bigproject.base.presenter.BasePresenter;
 import com.t3h.bigproject.fragment.screen.drinkmenu.api.DrinkMenuApiService;
-import com.t3h.bigproject.fragment.screen.drinkmenu.api.request.DrinkMenuParagram;
 import com.t3h.bigproject.fragment.screen.drinkmenu.view.DrinkView;
+import com.t3h.bigproject.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +32,11 @@ public class DrinkPresenterImpl implements BasePresenter,DrinkPresenter {
         drinkMenuApiService.drinkMenu(new DrinkMenuApiService.serviceCallBack() {
             @Override
             public void success(String code, Object respone) {
-                List<DrinkMenuParagram> data = (List<DrinkMenuParagram>) respone;
+                List<Product> data = (List<Product>) respone;
                 if (nameDrink.length()==0){
                     mView.showDrinkMenu(data);
                 }else {
-                    List<DrinkMenuParagram> dataSearch = new ArrayList<>();
+                    List<Product> dataSearch = new ArrayList<>();
                     for (int i = 0; i < data.size() ; i++) {
                         if (data.get(i).getName().indexOf(nameDrink)>=0){
                             dataSearch.add(data.get(i));

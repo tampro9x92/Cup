@@ -16,14 +16,7 @@ public class DrinkMenuParagram {
     @SerializedName("id_category")
     private long idCategory;
 
-    public DrinkMenuParagram(long id, String name, int avatar, String price, String status, long idCategory) {
-        this.id = id;
-        this.name = name;
-        this.avatar = avatar;
-        this.price = price;
-        this.status = status;
-        this.idCategory = idCategory;
-    }
+ 
 
     public long getId() {
         return id;

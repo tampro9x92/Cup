@@ -1,7 +1,7 @@
 package com.t3h.bigproject.fragment.screen.drinkmenu.api;
 
 import com.t3h.bigproject.contant.BaseUrl;
-import com.t3h.bigproject.fragment.screen.drinkmenu.api.request.DrinkMenuParagram;
+import com.t3h.bigproject.model.Product;
 
 import java.util.List;
 
@@ -32,17 +32,16 @@ public class DrinkMenuApiService {
 	}
 
 	public void drinkMenu(final serviceCallBack serviceCallBack){
-		drinkApiBuilder.getInstance(BaseUrl.BASE_URL).getDrinkMenu().enqueue(new Callback<DrinkMenuRespone<List<DrinkMenuParagram>>>() {
+		drinkApiBuilder.getInstance(BaseUrl.BASE_URL).getDrinkMenu().enqueue(new Callback<DrinkMenuRespone<List<Product>>>() {
 			@Override
-			public void onResponse(Call<DrinkMenuRespone<List<DrinkMenuParagram>>> call, Response<DrinkMenuRespone<List<DrinkMenuParagram>>> response) {
+			public void onResponse(Call<DrinkMenuRespone<List<Product>>> call, Response<DrinkMenuRespone<List<Product>>> response) {
 				checkSuccess(response,serviceCallBack);
 			}
 
 			@Override
-			public void onFailure(Call<DrinkMenuRespone<List<DrinkMenuParagram>>> call, Throwable t) {
+			public void onFailure(Call<DrinkMenuRespone<List<Product>>> call, Throwable t) {
 				checkFail(serviceCallBack,t);
 			}
 		});
-
 	}
 }
