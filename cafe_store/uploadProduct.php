@@ -19,5 +19,5 @@
         $appDataGetBack['code']="400";
         $appDataGetBack['data']=null;
     }
-
+    echo json_encode($appDataGetBack);
 ?>

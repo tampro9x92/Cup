@@ -12,40 +12,31 @@
     $address = $_POST['address'];
     $sex = $_POST['sex'];
     $passwordOut = md5($passwordIn);
-    $sql;
-   
-        if(!checkEmail($email,$conn)&&!checkPhoneNumber($phonenumber,$conn)){        
-             $sql = "INSERT INTO 
-            `user` (`email`, `password`, `fullname`, `dateofbirth`, `permission`, `phonenumber`,`address`, `sex`)
-            VALUES('$email','$passwordOut','$fullname','$dateofbirth','$permission','$phonenumber','$avatar','$address','$sex')";
-            $query =  $conn->query($sql);
-            
-            if ($query) {
-                $appDataGetBack['total'] = "0";
-                $appDataGetBack['message']= "Sign In Success";
-                $appDataGetBack['code'] = "200";
-            
-                // header('HTTP/1.1 200 Register success');
-            }else {
-                $appDataGetBack['total'] = "0";
-                $appDataGetBack['message']= "Sign In fail";
-                $appDataGetBack['code'] = "401";
-            
-                header('HTTP/1.1 401 register fail');
-            }
-            echo json_encode($appDataGetBack);
-        }else if(checkEmail($email,$conn)){
-                $appDataGetBack['total'] = "0";
-                $appDataGetBack['message']= "Email already exist";
-                $appDataGetBack['code'] = "200";
-            
-                echo json_encode($appDataGetBack);
-        }else if(checkPhoneNumber($phonenumber,$conn)){
+    
+    if(!checkEmail($email,$conn)&&!checkPhoneNumber($phonenumber,$conn)){        
+        $sql = "INSERT INTO `user` (`email`, `password`, `fullname`, `dateofbirth`, `permission`, `phonenumber`,`address`, `sex`)VALUES('$email','$passwordOut','$fullname','$dateofbirth','$permission','$phonenumber','$avatar','$address','$sex')";
+        $query =  $conn->query($sql);  
+        if ($query) {
             $appDataGetBack['total'] = "0";
-            $appDataGetBack['message']= "Phonenumber already exist";
+            $appDataGetBack['message']= "Sign In Success";
             $appDataGetBack['code'] = "200";
-            echo json_encode($appDataGetBack);
-        }
+        }else {
+            $appDataGetBack['total'] = "0";
+            $appDataGetBack['message']= "Sign In fail";
+            $appDataGetBack['code'] = "401";
+            }
+        echo json_encode($appDataGetBack);
+    }else if(checkEmail($email,$conn)){
+        $appDataGetBack['total'] = "0";
+        $appDataGetBack['message']= "Email already exist";
+        $appDataGetBack['code'] = "200";
+        echo json_encode($appDataGetBack);
+    }else if(checkPhoneNumber($phonenumber,$conn)){
+        $appDataGetBack['total'] = "0";
+        $appDataGetBack['message']= "Phonenumber already exist";
+        $appDataGetBack['code'] = "200";
+        echo json_encode($appDataGetBack);
+    }
 
     function checkEmail($email,$conn){
           if($email!=null){

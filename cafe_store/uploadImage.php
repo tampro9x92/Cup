@@ -4,12 +4,7 @@
 	$file_path = $file_path.time()."-".basename($_FILES["image"]["name"]);
 	$uploadOk = 1;
     $imageFileType = strtolower(pathinfo($file_path,PATHINFO_EXTENSION));
-    $appDataGetBack = [
-        'total'=>"",
-        'message'=>"",
-        'code'=>"",
-        'data'=>""
-	];
+    $error = "";
 	$checkUploadFile = false;
 	$check =getimagesize($_FILES["image"]["tmp_name"]);
 	if ($check !=false) {
@@ -30,25 +25,14 @@
 		$checkUploadFile = false;
 	};
 	if ($uploadOk == 0) {
-        $appDataGetBack['total']="0";
-        $appDataGetBack['message']="image type is not supported";
-        $appDataGetBack["code"]="300";
-		$appDataGetBack['data']=null;
+        $error="image type is not supported";
 		$checkUploadFile = false;
 	}else{
 		if (move_uploaded_file($_FILES["image"]["tmp_name"],$file_path)) {
-            $data =array();
-            array_push($data,$file_path);
-            $appDataGetBack['total']="0";
-            $appDataGetBack['message']="image upload success full";
-            $appDataGetBack["code"]="200";
-			$appDataGetBack['data']=$data;
+           	$error="image upload success full";
 			$checkUploadFile = true;
 		}else{
-            $appDataGetBack['total']="0";
-            $appDataGetBack['message']="image upload fail full";
-            $appDataGetBack["code"]="400";
-			$appDataGetBack['data']=null;
+            $error="image upload fail full";
 			$checkUploadFile = false;
 		}
 	}

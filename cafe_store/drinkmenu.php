@@ -2,7 +2,6 @@
     include "connection.php";
     $sql = "SELECT * FROM `product`";
     $query = $conn->query($sql);
-  
     $arr = array();
     while($row = $query->fetch_array()){
         $arr[] =array(
