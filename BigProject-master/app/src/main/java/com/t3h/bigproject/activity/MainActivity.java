@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        initTransition();
+//        initTransition();
         showFragment(drinkMenu);
 
     }
@@ -63,18 +63,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void showFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.hide(login);
-        transaction.hide(drinkMenu);
+        transaction.replace(R.id.panel,login);
+        transaction.replace(R.id.panel,drinkMenu);
         transaction.show(fragment);
         transaction.commit();
     }
 
     public void checking(){
-        if (login.isHidden()){
+        if (!login.isVisible()){
             lnToolbar.setVisibility(View.VISIBLE);
         }else {
             lnToolbar.setVisibility(View.GONE);
-
         }
     }
 

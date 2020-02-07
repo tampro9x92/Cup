@@ -320,7 +320,6 @@ public class Login extends BaseFragment<LoginPresenterImpl> implements LoginView
 					requestOptions.dontAnimate();
 
 //					Glide.with(getContext()).load(image_url).into(testFacebook);
-					presenter.otherLogin(id);
 
 				} catch (JSONException e) {
 					e.printStackTrace();

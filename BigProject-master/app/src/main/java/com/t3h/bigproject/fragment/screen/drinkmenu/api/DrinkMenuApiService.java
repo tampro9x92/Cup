@@ -20,7 +20,7 @@ public class DrinkMenuApiService {
 	public <D> void checkSuccess(Response<DrinkMenuRespone<D>> response,serviceCallBack serviceCallBack){
 		if (response.isSuccessful()&&response.body()!=null){
 			if (response.body().getCode() !=null && response.body().getCode().equalsIgnoreCase("200")){
-				serviceCallBack.success(response.code()+"",response.body().getMessage());
+				serviceCallBack.success(response.code()+"",response.body().getData());
 			}
 		}else {
 			serviceCallBack.fail(response.code()+"",response.body().getMessage());

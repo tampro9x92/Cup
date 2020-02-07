@@ -42,7 +42,4 @@ public interface LoginApi {
 	@FormUrlEncoded
 	Call<LoginRespone<List<User>>> login(@Field("email") String email,@Field("password") String password);
 
-	@POST("otherlogin")
-	@FormUrlEncoded
-	Call<LoginRespone<Empty>> otherLogin(@Field("id_user") String id);
 }
