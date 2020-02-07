@@ -7,9 +7,8 @@
         $arr[] =array(
             'id'=>$row['id'],
             'name'=>$row['name'],
-            'avatar'=>$row['avatar'],
             'price'=>$row['price'],
-            'status'=>$row['status'],);
+            'status'=>$row['status']);
     };
     if(sizeof($arr)>0){
         $appDataGetBack['total'] = "0";

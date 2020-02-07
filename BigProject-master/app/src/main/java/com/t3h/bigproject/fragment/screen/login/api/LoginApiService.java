@@ -66,17 +66,4 @@ public class LoginApiService {
 		});
 	}
 
-	public void otherLogin(String id, final serviceCallBack serviceCallBack) {
-		LoginApiBuilder.getInstance(BaseUrl.BASE_URL).otherLogin(id).enqueue(new Callback<LoginRespone<Empty>>() {
-			@Override
-			public void onResponse(Call<LoginRespone<Empty>> call, Response<LoginRespone<Empty>> response) {
-				checkSuccess(response, serviceCallBack);
-			}
-
-			@Override
-			public void onFailure(Call<LoginRespone<Empty>> call, Throwable t) {
-				checkFail(serviceCallBack, t);
-			}
-		});
-	}
 }

@@ -59,18 +59,4 @@ public class LoginPresenterImpl implements BasePresenter, LoginPresenter {
 		});
     }
 
-	@Override
-	public void otherLogin(String id) {
-		loginApiService.otherLogin(id, new LoginApiService.serviceCallBack() {
-			@Override
-			public void success(String code, Object respone) {
-				Toast.makeText(context, code, Toast.LENGTH_SHORT).show();
-			}
-
-			@Override
-			public void fail(String code, String message) {
-				Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-			}
-		});
-	}
 }

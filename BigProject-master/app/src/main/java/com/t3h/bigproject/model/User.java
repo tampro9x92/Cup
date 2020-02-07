@@ -23,8 +23,6 @@ public class User {
 	String phoneNumber;
 	@SerializedName("address")
 	String address;
-	@SerializedName("avatar")
-	String avatar;
 	@SerializedName("sex")
 	boolean sex;
 
