@@ -4,5 +4,5 @@ public class Status {
 	public static int USER = 1;
 	public static int PRODUCT = 2;
 	public static int CATEGORY = 3;
-	public static int HIDE = 4;
+
 }

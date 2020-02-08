@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.pm.PackageManager;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -18,6 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.t3h.bigproject.R;
+import com.t3h.bigproject.fragment.screen.deatail_drink.fragment.DrinkDetail;
 import com.t3h.bigproject.fragment.screen.drinkmenu.fragment.DrinkMenu;
 import com.t3h.bigproject.fragment.screen.login.fragment.Login;
 
@@ -30,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout panel;
     private Login login = new Login();
     private DrinkMenu drinkMenu = new DrinkMenu();
+    private DrinkDetail drinkDetail = new DrinkDetail();
     private LinearLayout lnToolbar;
+    private CircleImageView cimvBackArrow;
     private TextView tvTitle;
     private CircleImageView circleImageAvatar;
     private ImageView imvSearch;
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
 //        initTransition();
-        showFragment(drinkMenu);
+        showFragment(drinkDetail);
 
     }
 
@@ -51,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
         tvTitle = findViewById(R.id.tvTitle);
         circleImageAvatar = findViewById(R.id.circleImageAvatarUser);
         imvSearch = findViewById(R.id.imvSearch);
+        cimvBackArrow = findViewById(R.id.cimvBackArrow);
+
+        AnimationDrawable animationDrawable = (AnimationDrawable) cimvBackArrow.getBackground();
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
+        AnimationDrawable animationDrawable11 = (AnimationDrawable) lnToolbar.getBackground();
+        animationDrawable11.setExitFadeDuration(1000);
+        animationDrawable11.start();
     }
 
     public void initTransition(){
@@ -65,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.panel,login);
         transaction.replace(R.id.panel,drinkMenu);
+        transaction.replace(R.id.panel,drinkDetail);
         transaction.show(fragment);
         transaction.commit();
     }

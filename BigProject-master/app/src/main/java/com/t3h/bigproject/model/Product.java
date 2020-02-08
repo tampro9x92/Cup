@@ -16,4 +16,6 @@ public class Product {
 	private String price;
 	@SerializedName("status")
 	private int status;
+
+
 }

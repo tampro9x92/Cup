@@ -9,6 +9,7 @@
     if($query){
         while($row = $query->fetch_array()){
             $arr[] = array(
+                'id'=>$row['id'],
                 'avatar'=>$row['avatar']
             );
         }
@@ -22,6 +23,4 @@
         $appDataGetBack["code"]="401";
         $appDataGetBack['data']=$arr;
     }
-    
-
 ?>

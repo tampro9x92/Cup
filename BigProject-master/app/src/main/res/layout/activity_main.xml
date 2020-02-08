@@ -7,38 +7,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
-        <LinearLayout
-            android:id="@+id/lnToolbar"
-            android:background="@drawable/custom_background_toolbar_change_2"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_margin="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                />
-            <ImageView
-                android:id="@+id/imvSearch"
-                android:layout_margin="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_search_black_24dp"
-            />
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageAvatarUser"
-                android:layout_margin="10dp"
-                android:visibility="visible"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/cafebackground"/>
-        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/list_custom_background_toolbar"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cimvBackArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/list_custom_background_back_arrow"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/feelin_sweet"
+            android:maxLines="2"
+            android:text="Title"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imvSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_search_black_24dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageAvatarUser"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/cafebackground"
+            android:visibility="visible" />
+    </LinearLayout>
+
     <FrameLayout
         android:id="@+id/panel"
         android:layout_width="match_parent"
